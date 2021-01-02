@@ -1,0 +1,16 @@
+#define pinLED 53
+#define pinPIR 7
+void setup(){
+  pinMode(53, OUTPUT);
+  pinMode(pinPIR, INPUT);
+  Serial.begin(500);
+  pinMode(pinLED, OUTPUT);
+}
+void loop(){
+  bool valorPIR = digitalRead(pinPIR);
+  if (valorPIR){
+    digitalWrite(53, HIGH);
+  } else{
+    digitalWrite(53, LOW);
+  }
+}
